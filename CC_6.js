@@ -23,3 +23,18 @@ class Ball {
     ctx.fill();
     ctx.closePath();
   }
+
+//updated the draw method with collision detection
+ update() {
+    this.x += this.dx;
+    this.y += this.dy;
+
+    // Collision detection 
+    if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
+      this.dx = -this.dx; // Reverse direction when its on x-axis collision
+    }
+    if (this.y + this.radius >= canvas.height || this.y - this.radius <= 0) {
+      this.dy = -this.dy; // Reverse the direction when its on the y-axis collision
+    }
+  }
+}
