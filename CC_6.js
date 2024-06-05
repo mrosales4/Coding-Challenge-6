@@ -38,3 +38,15 @@ class Ball {
     }
   }
 }
+
+// Implement animation using setInterval.
+const ball = new Ball(200, 160, 20, 2, 2, "red"); //test data
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas for each frame
+  ball.update();
+  ball.draw();
+  window.requestAnimationFrame(animate); // request animation frame
+}
+
+window.requestAnimationFrame(animate);
