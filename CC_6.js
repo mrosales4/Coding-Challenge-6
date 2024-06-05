@@ -14,3 +14,12 @@ class Ball {
     this.dy = dy;
     this.color = color;
   }
+
+// Creating draw method for Ball class
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.closePath();
+  }
